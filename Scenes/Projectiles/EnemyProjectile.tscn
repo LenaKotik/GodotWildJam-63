@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Projectile.gd" type="Script" id=1]
+[ext_resource path="res://Textures/catrobotgun.png" type="Texture" id=2]
+[ext_resource path="res://Textures/light.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.0
+
+[node name="EnemyProjectile" type="Area2D"]
+pause_mode = 1
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 1 )
+moveSpeed = 100.0
+lifetime = 2
+startCountdownOutsideScreen = true
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+offset = Vector2( 1.5, 5.5 )
+hframes = 2
+vframes = 2
+frame = 2
+
+[node name="VisibilityNotifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 3.12924e-07, 0 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Lifetime" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+energy = 0.45

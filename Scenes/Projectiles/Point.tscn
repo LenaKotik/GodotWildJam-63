@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Point.gd" type="Script" id=1]
+[ext_resource path="res://Textures/point.png" type="Texture" id=2]
+
+[node name="Point" type="Sprite"]
+pause_mode = 1
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+hitRadius = 30.0
+accel = 20.0
+rotat = 5.0

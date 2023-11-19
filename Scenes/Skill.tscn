@@ -1,15 +1,60 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://font.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-outline_size = 1
+size = 18
+outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxFlat" id=2]
+content_margin_left = 11.0
+bg_color = Color( 0.286275, 0.835294, 0.0627451, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.203922, 0.254902, 0.0156863, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 11.0
+bg_color = Color( 0.215686, 0.439216, 0.027451, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.203922, 0.254902, 0.0156863, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 11.0
+bg_color = Color( 0.160784, 0.807843, 0.0470588, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.203922, 0.254902, 0.0156863, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="Skill" type="Button"]
 margin_right = 336.0
-margin_bottom = 40.0
+margin_bottom = 189.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
 text = "Babushkability: crit chance +4%"
 align = 0

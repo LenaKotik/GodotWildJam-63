@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Damge.mp3-935a7e1fe5f734cd052bf8a9deb5570b.mp3str"
+
+[deps]
+
+source_file="res://Sound/Sounds/Damge.mp3"
+dest_files=[ "res://.import/Damge.mp3-935a7e1fe5f734cd052bf8a9deb5570b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

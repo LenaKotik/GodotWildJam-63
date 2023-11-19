@@ -14,10 +14,30 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Enemy.gd"
 }, {
+"base": "TextureRect",
+"class": "Frame",
+"language": "GDScript",
+"path": "res://Scripts/Frame.gd"
+}, {
+"base": "Area2D",
+"class": "GroundAttack",
+"language": "GDScript",
+"path": "res://Scripts/GroundAttack.gd"
+}, {
+"base": "Area2D",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Scripts/Item.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Scripts/MC.gd"
+}, {
+"base": "Projectile",
+"class": "PlayerProjectile",
+"language": "GDScript",
+"path": "res://Scripts/PlayerProjectile.gd"
 }, {
 "base": "Sprite",
 "class": "Point",
@@ -41,7 +61,11 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Enemy": "",
+"Frame": "",
+"GroundAttack": "",
+"Item": "",
 "Player": "",
+"PlayerProjectile": "",
 "Point": "",
 "Projectile": "",
 "SoftCollision": "",
@@ -50,13 +74,14 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GodotWildJam#65"
-run/main_scene="res://Scenes/Main.tscn"
-config/icon="res://icon.png"
+config/name="BabushkasCatfeedingAdventure"
+run/main_scene="res://Scenes/MainMenu.tscn"
+boot_splash/image="res://Textures/GWJ-Full-Logo-tag-Orange2.png"
+config/icon="res://Textures/icon.png"
 
-[debug]
+[autoload]
 
-settings/stdout/print_fps=true
+MusicManager="*res://Scenes/MusicManager.tscn"
 
 [display]
 
@@ -129,6 +154,16 @@ pause={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+pickup={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+inventory={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -136,6 +171,7 @@ pause={
 2d_physics/layer_2="player_hurt"
 2d_physics/layer_3="enemy_hurt"
 2d_physics/layer_4="enemy_soft"
+2d_physics/layer_5="item_pickup"
 
 [mono]
 

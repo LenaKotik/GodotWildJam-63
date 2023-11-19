@@ -9,11 +9,13 @@ export(int, 0, 100) var critChance;
 export var attackSpeed : float = 1;
 export var reloadSpeed : float = 1;
 export var projectileScale : float = 1
+export var projectilePierce : int = 1;
 export var maxAmmo : int;
 
 onready var spawnPos = $ProjSpawnPos as Position2D;
 onready var shootAnim = $ShootAnim as AnimationPlayer;
 onready var reloadAnim = $ReloadAnim as AnimationPlayer;
+onready var shootSnd = $ShootSnd as AudioStreamPlayer2D
 
 var autoShoot = false;
 var ammo : int setget set_ammo;
@@ -48,9 +50,10 @@ func reloadOctave():
 
 func shoot(): # функция стрельбы
 	self.ammo -= 1;
-	var P = projectile.instance() as Projectile;
+	var P = projectile.instance() as PlayerProjectile;
 	P.direction = (get_global_mouse_position()-global_position).normalized(); 
 	P.scale = Vector2(projectileScale, projectileScale); 
+	P.pierce = projectilePierce;
 	P.damage = damage;
 	if (randi()%100)<critChance:
 		P.damage *= critDamgeMultiplier;
